@@ -6,9 +6,9 @@
 # to you under the Apache License, Version 2.0 (the
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
-# 
+#
 #   http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing,
 # software distributed under the License is distributed on an
 # "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -31,6 +31,11 @@ COPY . .
 RUN rake db:setup
 
 EXPOSE 3000
+#EXPOSE 1234
+ENV RUBYLIB ""
+
 CMD ["rails", "server", "-b", "0.0.0.0"]
+#CMD ["rdebug-ide", "--host", "0.0.0.0", "--port", "1234", "--dispatcher-port", "26162", "--", "/usr/local/bundle/bin/rails", "server", "-b", "0.0.0.0", "-e", "development"]
+
 
 

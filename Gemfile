@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.4.2'
+ruby '2.4.3'
 gem 'rails', '5.1.6'
 gem 'sqlite3'
 gem 'sass-rails'
@@ -38,6 +38,8 @@ group :development do
   gem 'spring-commands-rspec'
 end
 group :development, :test do
+  gem 'ruby-debug-ide'
+  gem 'debase'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'pry-rails'
